@@ -7,25 +7,41 @@ class ProfileScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Cover photo placeholder
+            // Placeholder for the profile cover photo area
             Container(
-              height: 140,
+              height: 160, // Slightly increased height for better visual impact
               width: double.infinity,
-              color: Colors.grey.shade300,
-              child: const Center(
-                child: Text('Cover Photo Placeholder'),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFF8E24AA), Color(0xFFD81B60)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: Image.asset(
+                'assets/images/cover.jpg',
+                fit: BoxFit.cover,
+                color: Colors.black.withOpacity(0.4),
+                colorBlendMode: BlendMode.darken,
+                alignment: Alignment.center,
               ),
             ),
-
             const SizedBox(height: 8),
 
-            // Profile picture
             Transform.translate(
-              offset: const Offset(0, -50), // Moves the profile pic up
+              offset: const Offset(0, -50),
               child: Column(
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(4), // White border effect
+                    padding: const EdgeInsets.all(4),
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
@@ -33,12 +49,12 @@ class ProfileScreen extends StatelessWidget {
                     child: const CircleAvatar(
                       radius: 48,
                       backgroundColor: Colors.blue,
-                      child: Icon(Icons.person, size: 48, color: Colors.white),
+                      backgroundImage: AssetImage('assets/images/profile.jpg'),
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'User Name',
+                    'Ren Makara',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 12),
