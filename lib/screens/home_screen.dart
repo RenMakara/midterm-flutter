@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
 
-      /// ⬆️ Floating curved Bottom Navigation
+      /// Floating curved Bottom Navigation
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
         child: ClipRRect(
